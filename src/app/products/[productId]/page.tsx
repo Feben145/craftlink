@@ -11,13 +11,13 @@ import Link from "next/link";
 
 interface ProductDetailsProps {
   params: {
-    productsId: string;
+    productId: string;
   };
 }
 
 export default function ProductDetailsPage({ params }: ProductDetailsProps) {
   const router = useRouter();
-  const productId = params.productsId;
+  const productId = params.productId;
 
   console.log("Product ID param:", productId);
 
