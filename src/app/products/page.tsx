@@ -14,6 +14,15 @@ import {
   Star,
   Loader2,
 } from "lucide-react";
+import candle from "../../../public/images/crcandle.jpg";
+import flower from "../../../public/images/crflower.jpg";
+import jewl from "../../../public/images/crjewl.jpg";
+import mat from "../../../public/images/crmat.jpg";
+import vase from "../../../public/images/crvase.jpg";
+import vase2 from "../../../public/images/crvase2.jpg";
+import basket from "../../../public/images/basket.jpg";
+import Image from "next/image";
+import type { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 interface Product {
   id: string;
@@ -28,6 +37,7 @@ interface Product {
   };
   rating?: number;
   reviewCount?: number;
+  path: string | StaticImport;
 }
 
 export default function ProductsPage() {
@@ -231,10 +241,12 @@ export default function ProductsPage() {
                   className="relative h-64 bg-gray-100 cursor-pointer overflow-hidden"
                   onClick={() => router.push(`/products/${product.id}`)}
                 >
-                  <img
-                    src={product.imageUrl || "/images/crflower/.jpg"}
-                    alt={product.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  <Image
+                    src={product?.path || candle}
+                    alt="Candle"
+                    width={200}
+                    height={200}
+                    className="rounded-xl shadow-md"
                   />
                   <div className="absolute top-3 right-3">
                     <Button
@@ -368,6 +380,7 @@ const sampleProducts: Product[] = [
     },
     rating: 4.5,
     reviewCount: 12,
+    path: basket,
   },
   {
     id: "2",
@@ -382,6 +395,7 @@ const sampleProducts: Product[] = [
     },
     rating: 4.8,
     reviewCount: 8,
+    path: candle,
   },
   {
     id: "3",
@@ -396,6 +410,7 @@ const sampleProducts: Product[] = [
     },
     rating: 4.3,
     reviewCount: 15,
+    path: flower,
   },
   {
     id: "4",
@@ -410,6 +425,7 @@ const sampleProducts: Product[] = [
     },
     rating: 4.6,
     reviewCount: 6,
+    path: mat,
   },
   {
     id: "5",
@@ -424,6 +440,7 @@ const sampleProducts: Product[] = [
     },
     rating: 4.7,
     reviewCount: 20,
+    path: mat,
   },
   {
     id: "6",
@@ -438,5 +455,6 @@ const sampleProducts: Product[] = [
     },
     rating: 4.4,
     reviewCount: 9,
+    path: vase,
   },
 ];
