@@ -37,17 +37,18 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section with Background Image */}
+      {/* Hero Section with Full Picture */}
       <section
         className="relative min-h-[70vh] flex items-center justify-center bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "cr1.jpeg",
+          backgroundImage:
+            "linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/images/cr1.jpg')",
+          backgroundSize: "cover", // or try "contain" to see full image without cropping
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed", // Optional: creates parallax effect
         }}
       >
-        {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-
-        <div className="relative z-10 text-center max-w-4xl mx-auto px-4 text-white">
+        <div className="text-center max-w-4xl mx-auto px-4 text-white">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
             Empowering{" "}
             <span className="text-amber-300">Women Through Digital</span> Craft
@@ -78,7 +79,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* How It Works Section */}
+      {/* Rest of your sections remain exactly the same */}
       <section className="container mx-auto px-4 py-16 bg-white">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
