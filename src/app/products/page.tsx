@@ -12,7 +12,6 @@ import {
   Heart,
   ShoppingCart,
   Star,
-  Loader2,
 } from "lucide-react";
 import candle from "../../../public/images/crcandle.jpg";
 import flower from "../../../public/images/crflower.jpg";
@@ -50,7 +49,6 @@ export default function ProductsPage() {
   const router = useRouter();
   const [products, setProducts] = useState<Product[]>([]);
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
-  const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [sortBy, setSortBy] = useState("newest");
@@ -64,31 +62,10 @@ export default function ProductsPage() {
     "jewelry",
   ];
 
-  // Fetch products from API
+  // Use sample data directly - no API call
   useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        setLoading(true);
-        const response = await fetch("/api/products");
-
-        if (!response.ok) {
-          throw new Error("Failed to fetch products");
-        }
-
-        const data = await response.json();
-        setProducts(data);
-        setFilteredProducts(data);
-      } catch (error) {
-        console.error("Error fetching products:", error);
-        // Fallback to sample data if API fails
-        setProducts(sampleProducts);
-        setFilteredProducts(sampleProducts);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProducts();
+    setProducts(sampleProducts);
+    setFilteredProducts(sampleProducts);
   }, []);
 
   // Filter and sort products
@@ -116,7 +93,6 @@ export default function ProductsPage() {
         break;
       case "newest":
       default:
-        // Assuming newer products have higher IDs - adjust based on your data
         filtered.sort((a, b) => parseInt(b.id) - parseInt(a.id));
         break;
     }
@@ -125,30 +101,17 @@ export default function ProductsPage() {
   }, [products, searchTerm, selectedCategory, sortBy]);
 
   const handleAddToCart = (product: Product) => {
-    // TODO: Implement cart functionality
     console.log("Added to cart:", product);
+    alert(`Added ${product.title} to cart!`);
   };
 
   const handleAddToWishlist = (product: Product) => {
-    // TODO: Implement wishlist functionality
     console.log("Added to wishlist:", product);
+    alert(`Added ${product.title} to wishlist!`);
   };
 
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-linear-to-br from-amber-50 to-orange-50 flex items-center justify-center">
-        <div className="text-center">
-          <Loader2 className="h-12 w-12 animate-spin text-amber-600 mx-auto mb-4" />
-          <p className="text-gray-600">
-            Loading beautiful handmade products...
-          </p>
-        </div>
-      </div>
-    );
-  }
-
   return (
-    <div className="min-h-screen bg-linear-to-br from-amber-50 to-orange-50">
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 to-orange-50">
       {/* Navigation */}
       <nav className="container mx-auto px-4 py-6">
         <div className="flex justify-between items-center">
@@ -374,7 +337,7 @@ export default function ProductsPage() {
   );
 }
 
-// Sample data fallback - REMOVE THE 'export' KEYWORD
+// Sample data fallback
 const sampleProducts: Product[] = [
   {
     id: "1",
