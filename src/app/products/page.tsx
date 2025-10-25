@@ -374,8 +374,8 @@ export default function ProductsPage() {
   );
 }
 
-// Sample data fallback
-export const sampleProducts: Product[] = [
+// Sample data fallback - REMOVE THE 'export' KEYWORD
+const sampleProducts: Product[] = [
   {
     id: "1",
     title: "Traditional Ethiopian Basket (Mesob)",
