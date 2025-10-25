@@ -30,7 +30,7 @@ export default function Home() {
             </Link>
             <Link href="/products">
               <Button className="bg-amber-600 hover:bg-amber-700 text-white">
-                Browse Products
+                Products
               </Button>
             </Link>
           </div>
@@ -281,7 +281,7 @@ export default function Home() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button asChild size="lg" variant="secondary">
-            <Link href="/seller/register">Become a Seller</Link>
+            <Link href="/seller/register">Sell</Link>
           </Button>
           <Button
             asChild
@@ -299,7 +299,7 @@ export default function Home() {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center space-x-2 mb-4 md:mb-0">
             <Sparkles className="h-6 w-6 text-amber-600" />
-            <span className="text-xl font-bold text-gray-900">CraftLink</span>
+            <span className="text-xl font-bold text-gray-900">EnatCraft</span>
           </div>
           <div className="text-gray-600 text-center md:text-right">
             <p>Empowering women entrepreneurs through digital craft markets</p>
