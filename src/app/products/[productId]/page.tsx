@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { sampleProducts, Product } from "../Product";
+import { sampleProducts, Product } from "../../../lib/Product";
 import Image from "next/image";
 import { ShoppingCart, Heart, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -11,13 +11,13 @@ import Link from "next/link";
 
 interface ProductDetailsProps {
   params: {
-    productId: string;
+    productsId: string;
   };
 }
 
 export default function ProductDetailsPage({ params }: ProductDetailsProps) {
   const router = useRouter();
-  const productId = params.productId;
+  const productId = params.productsId;
 
   console.log("Product ID param:", productId);
 
