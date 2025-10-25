@@ -24,6 +24,8 @@ import basket from "../../../public/images/basket.jpg";
 import mesob from "../../../public/images/mesob.jpg";
 import cusion from "../../../public/images/cushion.jpg";
 import cross from "../../../public/images/cross.jpg";
+import scarf from "../../../public/images/scarf.jpg";
+import jebena from "../../../public/images/jebena.jpg";
 
 import Image from "next/image";
 import type { StaticImport } from "next/dist/shared/lib/get-img-props";
@@ -39,7 +41,7 @@ interface Product {
     name: string;
     location: string;
   };
-  rating?: number;
+  rating: number;
   reviewCount?: number;
   path: string | StaticImport;
 }
@@ -247,35 +249,38 @@ export default function ProductsPage() {
                 >
                   <Image
                     src={product?.path || candle}
-                    alt="Candle"
-                    width={200}
-                    height={200}
-                    className="rounded-xl shadow-md"
+                    alt={product.title}
+                    fill
+                    className="object-cover w-full h-full rounded-xl shadow-md group-hover:scale-105 transition-transform duration-300"
                   />
+
+                  {/* Wishlist Button */}
                   <div className="absolute top-3 right-3">
                     <Button
                       size="icon"
                       variant="secondary"
-                      className="h-8 w-8 rounded-full bg-white/80 backdrop-blur-sm hover:bg-white"
+                      className="h-8 w-8 rounded-full bg-white/80 backdrop-blur-sm hover:bg-white transition"
                       onClick={(e) => {
                         e.stopPropagation();
                         handleAddToWishlist(product);
                       }}
                     >
-                      <Heart className="h-4 w-4" />
+                      <Heart className="h-4 w-4 text-red-500" />
                     </Button>
                   </div>
-                  {/* Category Tag - Replaced Badge with simple div */}
-                  <div className="absolute top-3 left-3 bg-amber-600 text-white text-xs font-medium px-2 py-1 rounded-full">
+
+                  {/* Category Tag */}
+                  <div className="absolute top-3 left-3 bg-amber-600 text-white text-xs font-medium px-2 py-1 rounded-full shadow-sm">
                     {product.category}
                   </div>
                 </div>
 
                 {/* Product Info */}
                 <div className="p-4">
-                  <div className="mb-2">
+                  {/* Title & Description */}
+                  <div className="mb-3">
                     <h3
-                      className="font-semibold text-lg text-gray-900 cursor-pointer hover:text-amber-700 line-clamp-2"
+                      className="font-semibold text-lg text-gray-900 cursor-pointer hover:text-amber-700 line-clamp-2 transition-colors"
                       onClick={() => router.push(`/products/${product.id}`)}
                     >
                       {product.title}
@@ -299,7 +304,7 @@ export default function ProductsPage() {
                           <Star
                             key={i}
                             className={`h-3 w-3 ${
-                              i < Math.floor(product.rating!)
+                              i < Math.floor(product.rating)
                                 ? "text-amber-500 fill-amber-500"
                                 : "text-gray-300"
                             }`}
@@ -312,17 +317,16 @@ export default function ProductsPage() {
                     </div>
                   )}
 
-                  {/* Price and Actions */}
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="text-2xl font-bold text-amber-700">
-                        ETB {product.price.toLocaleString()}
-                      </p>
-                    </div>
+                  {/* Price & Actions */}
+                  <div className="flex items-center justify-between mt-2">
+                    <p className="text-2xl font-bold text-amber-700">
+                      ETB {product.price.toLocaleString()}
+                    </p>
+
                     <div className="flex gap-2">
                       <Button
                         size="sm"
-                        className="bg-amber-600 hover:bg-amber-700 text-white"
+                        className="bg-amber-600 hover:bg-amber-700 text-white transition"
                         onClick={() => handleAddToCart(product)}
                       >
                         <ShoppingCart className="h-4 w-4 mr-1" />
@@ -331,6 +335,7 @@ export default function ProductsPage() {
                       <Button
                         size="sm"
                         variant="outline"
+                        className="border-amber-600 text-amber-600 hover:bg-amber-50 transition"
                         onClick={() => router.push(`/products/${product.id}`)}
                       >
                         Details
@@ -429,7 +434,7 @@ export const sampleProducts: Product[] = [
     seller: { name: "Kaleb Pottery", location: "Dire Dawa" },
     rating: 4.9,
     reviewCount: 20,
-    path: mat,
+    path: jebena,
   },
   {
     id: "6",
@@ -441,7 +446,7 @@ export const sampleProducts: Product[] = [
     seller: { name: "Weini Weaves", location: "Mekele" },
     rating: 4.4,
     reviewCount: 9,
-    path: vase,
+    path: scarf,
   },
   {
     id: "7",
