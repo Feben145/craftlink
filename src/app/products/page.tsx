@@ -21,6 +21,10 @@ import mat from "../../../public/images/crmat.jpg";
 import vase from "../../../public/images/crvase.jpg";
 import vase2 from "../../../public/images/crvase2.jpg";
 import basket from "../../../public/images/basket.jpg";
+import mesob from "../../../public/images/mesob.jpg";
+import cusion from "../../../public/images/cushion.jpg";
+import cross from "../../../public/images/cross.jpg";
+
 import Image from "next/image";
 import type { StaticImport } from "next/dist/shared/lib/get-img-props";
 
@@ -148,7 +152,7 @@ export default function ProductsPage() {
         <div className="flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <Sparkles className="h-8 w-8 text-amber-600" />
-            <span className="text-2xl font-bold text-gray-900">CraftLink</span>
+            <span className="text-2xl font-bold text-gray-900">enatCraft</span>
           </div>
           <div className="flex space-x-4">
             <Link href="/seller/register">
@@ -366,95 +370,113 @@ export default function ProductsPage() {
 }
 
 // Sample data fallback
-const sampleProducts: Product[] = [
+export const sampleProducts: Product[] = [
   {
     id: "1",
-    title: "Traditional Ethiopian Basket",
+    title: "Traditional Ethiopian Basket (Mesob)",
     description:
-      "Handwoven basket with beautiful traditional patterns, perfect for home decor or storage.",
+      "Beautifully handwoven basket made with colorful grass reeds — perfect for serving or as a centerpiece.",
     price: 350,
     category: "handmade",
-    seller: {
-      name: "Elena Crafts",
-      location: "Addis Ababa",
-    },
+    seller: { name: "Elena Crafts", location: "Addis Ababa" },
     rating: 4.5,
     reviewCount: 12,
     path: basket,
   },
   {
     id: "2",
-    title: "Handmade Leather Bag",
+    title: "Handcrafted Beeswax Candle Set",
     description:
-      "Genuine leather bag with traditional embroidery, crafted by skilled artisans.",
-    price: 850,
-    category: "clothing",
-    seller: {
-      name: "Marta Leatherworks",
-      location: "Hawassa",
-    },
-    rating: 4.8,
-    reviewCount: 8,
+      "Aromatic handmade candles from natural beeswax — add warmth and serenity to your home.",
+    price: 280,
+    category: "home decor",
+    seller: { name: "Marta Candles", location: "Hawassa" },
+    rating: 4.7,
+    reviewCount: 10,
     path: candle,
   },
   {
     id: "3",
-    title: "Silver Ethiopian Cross",
+    title: "Silver Ethiopian Cross Pendant",
     description:
-      "Beautiful silver cross pendant with traditional Ethiopian design.",
+      "Elegant sterling silver cross pendant inspired by ancient Ethiopian designs.",
     price: 450,
     category: "jewelry",
-    seller: {
-      name: "Selam Silver",
-      location: "Bahir Dar",
-    },
-    rating: 4.3,
+    seller: { name: "Selam Silver", location: "Bahir Dar" },
+    rating: 4.8,
     reviewCount: 15,
-    path: flower,
+    path: cross,
   },
   {
     id: "4",
-    title: "Embroidered Cushion Cover",
+    title: "Hand-Embroidered Cushion Cover",
     description:
-      "Colorful hand-embroidered cushion cover with traditional motifs.",
-    price: 280,
+      "Vibrant cushion cover hand-stitched with traditional motifs — perfect for brightening your space.",
+    price: 320,
     category: "home decor",
-    seller: {
-      name: "Hana Textiles",
-      location: "Addis Ababa",
-    },
+    seller: { name: "Hana Textiles", location: "Addis Ababa" },
     rating: 4.6,
-    reviewCount: 6,
-    path: mat,
+    reviewCount: 8,
+    path: cusion,
   },
   {
     id: "5",
     title: "Clay Coffee Pot (Jebena)",
     description:
-      "Traditional clay coffee pot used in authentic Ethiopian coffee ceremonies.",
+      "Authentic handmade clay coffee pot used in Ethiopian coffee ceremonies.",
     price: 650,
     category: "handmade",
-    seller: {
-      name: "Kaleb Pottery",
-      location: "Dire Dawa",
-    },
-    rating: 4.7,
+    seller: { name: "Kaleb Pottery", location: "Dire Dawa" },
+    rating: 4.9,
     reviewCount: 20,
     path: mat,
   },
   {
     id: "6",
-    title: "Handwoven Scarf",
+    title: "Handwoven Cotton Scarf (Netela)",
     description:
-      "Soft cotton scarf with traditional patterns, perfect for any occasion.",
-    price: 320,
+      "Soft and lightweight scarf woven from pure cotton — elegant and comfortable for any occasion.",
+    price: 300,
     category: "clothing",
-    seller: {
-      name: "Weini Weaves",
-      location: "Mekele",
-    },
+    seller: { name: "Weini Weaves", location: "Mekele" },
     rating: 4.4,
     reviewCount: 9,
     path: vase,
+  },
+  {
+    id: "7",
+    title: "Decorative Flower Pot",
+    description:
+      "Hand-painted ceramic pot perfect for small plants or floral arrangements.",
+    price: 400,
+    category: "home decor",
+    seller: { name: "Rahel Ceramics", location: "Adama" },
+    rating: 4.5,
+    reviewCount: 11,
+    path: flower,
+  },
+  {
+    id: "8",
+    title: "Colorful Woven Mat",
+    description:
+      "Durable handwoven mat made from natural fibers — adds color and tradition to your space.",
+    price: 500,
+    category: "home decor",
+    seller: { name: "Lensa Crafts", location: "Jimma" },
+    rating: 4.3,
+    reviewCount: 7,
+    path: mat,
+  },
+  {
+    id: "9",
+    title: "Traditional Serving Mesob",
+    description:
+      "Intricately woven serving table (Mesob) — iconic Ethiopian craftsmanship symbolizing unity and culture.",
+    price: 1200,
+    category: "handmade",
+    seller: { name: "Genet Artisans", location: "Addis Ababa" },
+    rating: 4.9,
+    reviewCount: 18,
+    path: mesob,
   },
 ];
