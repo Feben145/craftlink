@@ -1,16 +1,16 @@
 // products.ts
 import type { StaticImport } from "next/dist/shared/lib/get-img-props";
-import candle from "../../../public/images/crcandle.jpg";
-import flower from "../../../public/images/crflower.jpg";
-import jewl from "../../../public/images/crjewl.jpg";
-import mat from "../../../public/images/crmat.jpg";
-import vase from "../../../public/images/crvase.jpg";
-import vase2 from "../../../public/images/crvase2.jpg";
-import basket from "../../../public/images/basket.jpg";
-import mesob from "../../../public/images/mesob.jpg";
-import cusion from "../../../public/images/cushion.jpg";
-import cross from "../../../public/images/cross.jpg";
-import scarf from "../../../public/images/scarf.jpg";
+import candle from "../../public/images/crcandle.jpg";
+import flower from "../../public/images/crflower.jpg";
+import jewl from "../../public/images/crjewl.jpg";
+import mat from "../../public/images/crmat.jpg";
+import vase from "../../public/images/crvase.jpg";
+import vase2 from "../../public/images/crvase2.jpg";
+import basket from "../../public/images/basket.jpg";
+import mesob from "../../public/images/mesob.jpg";
+import cusion from "../../public/images/cushion.jpg";
+import cross from "../../public/images/cross.jpg";
+import scarf from "../../public/images/scarf.jpg";
 
 export interface Product {
   id: string;
