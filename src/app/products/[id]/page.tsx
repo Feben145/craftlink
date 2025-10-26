@@ -312,7 +312,7 @@ export default function ProductDetailsPage() {
   const reviewCount = product.reviewCount || reviews.length;
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-amber-50 to-orange-50">
+    <div className="min-h-screen bg-linear-to-br from-amber-50 to-orange-50 flex flex-col">
       {/* Navigation */}
       <nav className="container mx-auto px-4 py-6">
         <div className="flex justify-between items-center">
@@ -339,7 +339,7 @@ export default function ProductDetailsPage() {
         </div>
       </nav>
 
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 py-8 flex-1">
         {/* Back Button */}
         <Button
           onClick={() => router.back()}
@@ -678,6 +678,22 @@ export default function ProductDetailsPage() {
           </div>
         </div>
       </div>
+
+      {/* ---------------- Footer ---------------- */}
+      <footer className="container mx-auto px-4 py-8 mt-16 border-t border-amber-200">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex items-center space-x-2">
+            <Sparkles className="h-6 w-6 text-amber-600" />
+            <span className="text-xl font-bold text-gray-900">EnatCraft</span>
+          </div>
+          <div className="text-gray-600 text-center md:text-right">
+            <p>Empowering women entrepreneurs through digital craft markets</p>
+            <p className="text-sm mt-1">
+              © {new Date().getFullYear()} EnatCraft. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
