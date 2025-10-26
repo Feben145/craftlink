@@ -13,9 +13,9 @@ import logo from "../../public/images/logo.png";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 to-orange-50">
+    <div className="min-h-screen bg-linear-to-br from-amber-50 to-orange-50">
       {/* ---------------- Navigation ---------------- */}
-      <nav className="container mx-auto px-4 py-6">
+      <nav className="container mx-auto px-4 py-6 mb-16 border-b border-amber-200">
         <div className="flex justify-between items-center">
           <Link href="/" className="flex items-center space-x-2">
             <Image
@@ -35,8 +35,16 @@ export default function Home() {
               variant="ghost"
               className="text-gray-700 hover:text-amber-700"
             >
-              <Link href="/seller/register">Become a Seller</Link>
+              <Link href="/seller/register">Seller</Link>
             </Button>
+            <Button
+              asChild
+              variant="ghost"
+              className="text-gray-700 hover:text-amber-700"
+            >
+              <Link href="/seller/register">About</Link>
+            </Button>
+
             <Button
               asChild
               className="bg-amber-600 hover:bg-amber-700 text-white"
@@ -289,7 +297,14 @@ export default function Home() {
       <footer className="container mx-auto px-4 py-8 mt-16 border-t border-amber-200">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center space-x-2">
-            <Sparkles className="h-6 w-6 text-amber-600" />
+            <Image
+              src={logo}
+              alt="EnatCraft logo"
+              width={90}
+              height={90}
+              className="rounded-full"
+              priority
+            />
             <span className="text-xl font-bold text-gray-900">EnatCraft</span>
           </div>
           <div className="text-gray-600 text-center md:text-right">
