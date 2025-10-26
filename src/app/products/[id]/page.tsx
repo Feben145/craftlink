@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -19,6 +20,7 @@ import Image from "next/image";
 
 // Import all your product images
 import candle from "../../../../public/images/crcandle.jpg";
+import logo from "../../../../public/images/logo.png";
 import flower from "../../../../public/images/crflower.jpg";
 import jewl from "../../../../public/images/crjewl.jpg";
 import mat from "../../../../public/images/crmat.jpg";
@@ -316,10 +318,17 @@ export default function ProductDetailsPage() {
       {/* Navigation */}
       <nav className="container mx-auto px-4 py-6">
         <div className="flex justify-between items-center">
-          <div className="flex items-center space-x-2">
-            <Sparkles className="h-8 w-8 text-amber-600" />
-            <span className="text-2xl font-bold text-gray-900">enatCraft</span>
-          </div>
+          <Link href="/" className="flex items-center space-x-2">
+            <Image
+              src={logo}
+              alt="EnatCraft logo"
+              width={90}
+              height={90}
+              className="rounded-full"
+              priority
+            />
+            <span className="text-2xl font-bold text-gray-900">EnatCraft</span>
+          </Link>
           <div className="flex space-x-4">
             <Button
               variant="ghost"
