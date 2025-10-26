@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
+  Menu,
   Sparkles,
   ShoppingBag,
   Heart,
@@ -14,22 +15,25 @@ import logo from "../../public/images/logo.png";
 export default function Home() {
   return (
     <div className="min-h-screen bg-linear-to-br from-amber-50 to-orange-50">
-      {/* ---------------- Navigation ---------------- */}
-      <nav className="container mx-auto px-4 py-6 mb-16 border-b border-amber-200">
+      <nav className="container mx-auto px-4 py-4 mb-8 border-b border-amber-200">
         <div className="flex justify-between items-center">
+          {/* --- Logo --- */}
           <Link href="/" className="flex items-center space-x-2">
             <Image
               src={logo}
               alt="EnatCraft logo"
-              width={90}
-              height={90}
+              width={60}
+              height={60}
               className="rounded-full"
               priority
             />
-            <span className="text-2xl font-bold text-gray-900">EnatCraft</span>
+            <span className="text-xl sm:text-2xl font-bold text-gray-900">
+              EnatCraft
+            </span>
           </Link>
 
-          <div className="flex space-x-4">
+          {/* --- Desktop Menu --- */}
+          <div className="hidden md:flex space-x-4">
             <Button
               asChild
               variant="ghost"
@@ -42,15 +46,19 @@ export default function Home() {
               variant="ghost"
               className="text-gray-700 hover:text-amber-700"
             >
-              <Link href="/seller/register">About</Link>
+              <Link href="/about">About</Link>
             </Button>
-
             <Button
               asChild
               className="bg-amber-600 hover:bg-amber-700 text-white"
             >
               <Link href="/products">Products</Link>
             </Button>
+          </div>
+
+          {/* --- Mobile Menu Icon --- */}
+          <div className="md:hidden flex items-center">
+            <Menu className="w-6 h-6 text-gray-800" />
           </div>
         </div>
       </nav>
@@ -94,7 +102,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* ---------------- How It Works ---------------- */}
       <section className="container mx-auto px-4 py-16 bg-white">
         <div className="text-center mb-12">
@@ -142,7 +149,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-
       {/* ---------------- Featured Products ---------------- */}
       <section className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
@@ -191,7 +197,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-
       {/* ---------------- Why Choose Us ---------------- */}
       <section className="container mx-auto px-4 py-16 bg-white">
         <div className="text-center mb-12">
@@ -239,7 +244,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-
       {/* ---------------- Categories ---------------- */}
       <section className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
@@ -268,7 +272,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-
       {/* ---------------- Call to Action ---------------- */}
       <section className="container mx-auto px-4 py-16 bg-amber-600 rounded-2xl text-center text-white max-w-4xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -292,7 +295,6 @@ export default function Home() {
           </Button>
         </div>
       </section>
-
       {/* ---------------- Footer ---------------- */}
       <footer className="container mx-auto px-4 py-8 mt-16 border-t border-amber-200">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
